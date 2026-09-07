@@ -1,10 +1,9 @@
-import 'package:chat_app/pages/register_page.dart';
 import 'package:chat_app/widgets/custom_Text_field.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class LoginPage extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Sign In",
+                  "Register",
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w400,
@@ -40,20 +39,20 @@ class LoginPage extends StatelessWidget {
                 ),
               ],
             ),
-            
+
             const SizedBox(height: 20),
             CustomTextField(hint: "Email"),
             SizedBox(height: 10),
             CustomTextField(hint: "Password"),
             SizedBox(height: 20),
 
-            CustomButton(text: "Sign In"),
+            CustomButton(text: "Register"),
             SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "don't have an account?",
+                  "already have an account?",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
@@ -62,15 +61,10 @@ class LoginPage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => RegisterPage(),
-                      ),
-                    );
+                    Navigator.pop(context);
                   },
                   child: Text(
-                    "   Register",
+                    "   Login",
                     style: TextStyle(
                       color: Color(0xffc7ede6),
                       fontSize: 20,

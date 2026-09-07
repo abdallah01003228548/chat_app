@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
+  CustomButton({super.key, required this.text});
+  String text;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class CustomButton extends StatelessWidget {
       ),
       onPressed: () {},
       child: Text(
-        "Sign In",
+        text,
         style: TextStyle(
           color: Color(0xff274460),
           fontSize: 20,
