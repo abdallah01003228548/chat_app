@@ -14,16 +14,23 @@ class RegisterPage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 75),
-            Image.asset('assets/images/scholar.png'),
-            Text(
-              'Scholar Chat',
-              style: TextStyle(
-                fontFamily: "pacifico",
-                fontSize: 32,
-                fontWeight: FontWeight.w400,
-                color: Colors.white,
-                decoration: TextDecoration.none,
-              ),
+            Image.asset('assets/images/scholar.png',
+            height: 100,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Scholar Chat',
+                  style: TextStyle(
+                    fontFamily: "pacifico",
+                    fontSize: 32,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white,
+                    decoration: TextDecoration.none,
+                  ),
+                ),
+              ],
             ),
             SizedBox(height: 75),
             Row(
