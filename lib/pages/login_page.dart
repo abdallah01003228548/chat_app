@@ -15,9 +15,7 @@ class LoginPage extends StatelessWidget {
         child: ListView(
           children: [
             SizedBox(height: 75),
-            Image.asset('assets/images/scholar.png',
-            height: 100,
-            ),
+            Image.asset('assets/images/scholar.png', height: 100),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -47,14 +45,19 @@ class LoginPage extends StatelessWidget {
                 ),
               ],
             ),
-            
+
             const SizedBox(height: 20),
-            CustomTextField(hint: "Email"),
+            CustomTextField(hint: "Email", controller: TextEditingController()),
             SizedBox(height: 10),
-            CustomTextField(hint: "Password"),
+            CustomTextField(hint: "Password", controller: TextEditingController()),
             SizedBox(height: 20),
 
-            CustomButton(text: "Sign In"),
+            CustomButton(
+              text: "Sign In",
+              onPressed: () {
+                // Handle sign in button press
+              },
+            ),
             SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -71,9 +74,7 @@ class LoginPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => RegisterPage(),
-                      ),
+                      MaterialPageRoute(builder: (context) => RegisterPage()),
                     );
                   },
                   child: Text(
