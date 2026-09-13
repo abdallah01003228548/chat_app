@@ -7,7 +7,13 @@ class CustomTextField extends StatelessWidget {
   TextEditingController controller;
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter some text';
+        }
+        return null;
+      },
       controller: controller,
       decoration: InputDecoration(
         hint: Text(

@@ -1,5 +1,5 @@
 import 'package:chat_app/pages/register_page.dart';
-import 'package:chat_app/widgets/custom_Text_field.dart';
+import 'package:chat_app/widgets/custom_Text_form_field.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
