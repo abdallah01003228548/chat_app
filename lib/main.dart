@@ -1,3 +1,4 @@
+import 'package:chat_app/pages/chat_page.dart';
 import 'package:chat_app/pages/login_page.dart';
 import 'package:chat_app/pages/register_page.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,15 @@ class ScholarChat extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: LoginPage());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Scholar Chat',
+      initialRoute: LoginPage.routeName,
+    routes: {
+      LoginPage.routeName: (context) => LoginPage(),
+      RegisterPage.routeName: (context) => RegisterPage(),
+      ChatPage.routeName: (context) => ChatPage(),
+    },
+    );
   }
 }

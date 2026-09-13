@@ -2,12 +2,11 @@ import 'package:chat_app/widgets/custom_Text_form_field.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({super.key});
-
+  static const String routeName = 'RegisterPage';
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }
