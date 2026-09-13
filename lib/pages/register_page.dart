@@ -1,3 +1,4 @@
+import 'package:chat_app/pages/chat_page.dart';
 import 'package:chat_app/widgets/custom_Text_form_field.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -82,7 +83,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       setState(() {});
                       try {
                         await registerUser();
-                        showSnackBar(context, 'User registered successfully.');
+                        Navigator.pushNamed(context, ChatPage.routeName);
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'weak-password') {
                           showSnackBar(

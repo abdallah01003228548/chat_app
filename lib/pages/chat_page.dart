@@ -5,6 +5,8 @@ class ChatPage extends StatelessWidget {
   static const String routeName = 'ChatPage';
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+
+    );
   }
 }

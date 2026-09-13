@@ -1,3 +1,4 @@
+import 'package:chat_app/pages/chat_page.dart';
 import 'package:chat_app/pages/register_page.dart';
 import 'package:chat_app/widgets/custom_Text_form_field.dart';
 import 'package:chat_app/widgets/custom_button.dart';
@@ -81,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                       setState(() {});
                       try {
                         await signInUser();
-                        showSnackBar(context, "User signed in successfully");
+                        Navigator.pushNamed(context, ChatPage.routeName);
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'invalid-email') {
                           showSnackBar(context, 'No user found for that email.');
@@ -109,11 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => RegisterPage(),
-                          ),
+                        Navigator.pushNamed(context, RegisterPage.routeName
                         );
                       },
                       child: Text(
