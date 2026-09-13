@@ -64,13 +64,16 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ],
                 ),
-            
+
                 const SizedBox(height: 20),
-                CustomTextField(hint: "Email", controller: emailController),
+                CustomTextFormField(hint: "Email", controller: emailController),
                 SizedBox(height: 10),
-                CustomTextField(hint: "Password", controller: passwordController),
+                CustomTextFormField(
+                  hint: "Password",
+                  controller: passwordController,
+                ),
                 SizedBox(height: 20),
-            
+
                 CustomButton(
                   text: "Register",
                   onPressed: () async {
@@ -83,12 +86,21 @@ class _RegisterPageState extends State<RegisterPage> {
                         showSnackBar(context, 'User registered successfully.');
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'weak-password') {
-                          showSnackBar(context, 'The password provided is too weak.');
+                          showSnackBar(
+                            context,
+                            'The password provided is too weak.',
+                          );
                         } else if (e.code == 'email-already-in-use') {
-                          showSnackBar(context, 'The account already exists for that email.');
+                          showSnackBar(
+                            context,
+                            'The account already exists for that email.',
+                          );
                         }
                       } catch (e) {
-                        showSnackBar(context, 'An error occurred while registering.');
+                        showSnackBar(
+                          context,
+                          'An error occurred while registering.',
+                        );
                       }
                       isLoading = false;
                       setState(() {});
@@ -130,10 +142,10 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  void showSnackBar(BuildContext context,String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
+  void showSnackBar(BuildContext context, String message) {
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(message)));
   }
 
   Future<void> registerUser() async {
