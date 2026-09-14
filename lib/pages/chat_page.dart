@@ -18,7 +18,11 @@ class ChatPage extends StatelessWidget {
         ),
         backgroundColor: Color(0xff274460),
       ),
-      body: ChatBuble(),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          return ChatBuble();
+        },
+      ),
     );
   }
 }
